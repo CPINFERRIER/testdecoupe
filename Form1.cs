@@ -21,11 +21,7 @@ namespace testdecoup
 
         
             private void button1_Click(object sender, EventArgs e)
-        {
-
-            // Appeler la méthode InitializeComponent pour initialiser la fenêtre et ses contrôles
-            InitializeComponent();
-
+        {           
             // Ouvrir le fichier en lecture
             StreamReader fichier = new StreamReader(textBox1.Text);
 
