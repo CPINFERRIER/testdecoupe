@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,7 @@ namespace testdecoup
 
             }
             // Recherche le fichier toconf ou autre à définir après mais dans l'ordre des chiffres à sa suite
+            
             string directoryPath = textBox1.Text;
             string[] files = Directory.GetFiles(directoryPath, "toconf*.txt");
 
@@ -46,40 +48,40 @@ namespace testdecoup
                     closestFile = file;
                     closestNumber = difference;
                 }
-                
+
                 // Ouvrir le fichier en lecture
-                StreamReader fichier = new StreamReader(closestFile);                   
+                string directdoss = closestFile;
+                StreamReader fichier = new StreamReader(directdoss);
+                try
+                {
 
-                // Lire une ligne de texte depuis le fichier
-                string ligne = fichier.ReadLine();
+                    // Lire une ligne de texte depuis le fichier
+                    string ligne = fichier.ReadLine();
 
-                // Découper la ligne en utilisant la méthode Split
-                string[] param = ligne.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    // Découper la ligne en utilisant la méthode Split
+                    string[] param = ligne.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-                // Écrire le premier mot dans le label
-                string namech = param[0];
-                string RAh = param[4];
-                string RAm = param[5];
-                string RAs = param[6];
-                string DECh = param[7];
-                string DECm = param[8];
-                string DECs = param[9];
+                    // Écrire le premier mot dans le label
+                    string namech = param[0];
+                    string RAh = param[4];
+                    string RAm = param[5];
+                    string RAs = param[6];
+                    string DECh = param[7];
+                    string DECm = param[8];
+                    string DECs = param[9];
 
-                // Afficher la valeur du premier mot dans une boîte de dialogue
-                //MessageBox.Show("Le premier mot est : " + textBox2.Text);
+                    //crée le fichier text de suivi de la soirée
+                    string fileName = namech + ".txt";
+                    File.WriteAllText(textBox1.Text + "ShootOK/" + fileName, namech);
 
-                string fileName = namech + ".txt";
-                File.WriteAllText(textBox1.Text + "ShootOK/" + fileName, namech);
-
-                // Fermer le fichier
-                fichier.Close();
-
-                // Supprimer le fichier closestFile
-                if (closestFile != null && File.Exists(closestFile))
-                {                    
-                    File.Delete(closestFile);
-                    Environment.Exit(0);
                 }
+                finally                 
+                {
+                    // Fermer le fichier
+                    fichier.Close();
+                }
+                
+               
 
             }
             
