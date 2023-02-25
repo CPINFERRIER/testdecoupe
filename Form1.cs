@@ -46,9 +46,9 @@ namespace testdecoup
                     closestFile = file;
                     closestNumber = difference;
                 }
-
+                
                 // Ouvrir le fichier en lecture
-                StreamReader fichier = new StreamReader(closestFile);
+                StreamReader fichier = new StreamReader(closestFile);                   
 
                 // Lire une ligne de texte depuis le fichier
                 string ligne = fichier.ReadLine();
@@ -73,10 +73,10 @@ namespace testdecoup
 
                 // Fermer le fichier
                 fichier.Close();
-
-                
+                                
 
             }
+            
         }
 
     }
