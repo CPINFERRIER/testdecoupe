@@ -32,11 +32,17 @@ namespace testdecoup
             string[] param = ligne.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             // Écrire le premier mot dans le label
-            textBox2.Text = param[0];
-            
+            string namech = param[0];
+            string RAh = param[4];
+            string RAm = param[5];
+            string RAs = param[6];
+            string DECh = param[7];
+            string DECm = param[8];
+            string DECs = param[9];
+
             // Afficher la valeur du premier mot dans une boîte de dialogue
             //MessageBox.Show("Le premier mot est : " + textBox2.Text);
-            
+
             // Fermer le fichier
             fichier.Close();
 
