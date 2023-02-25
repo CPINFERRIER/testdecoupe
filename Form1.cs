@@ -73,7 +73,13 @@ namespace testdecoup
 
                 // Fermer le fichier
                 fichier.Close();
-                                
+
+                // Supprimer le fichier closestFile
+                if (closestFile != null && File.Exists(closestFile))
+                {                    
+                    File.Delete(closestFile);
+                    Environment.Exit(0);
+                }
 
             }
             
