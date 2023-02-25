@@ -82,10 +82,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(223, 30);
+            this.textBox2.Location = new System.Drawing.Point(157, 26);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(112, 32);
+            this.textBox2.Size = new System.Drawing.Size(102, 20);
             this.textBox2.TabIndex = 6;
             // 
             // Form1

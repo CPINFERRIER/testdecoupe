@@ -35,7 +35,7 @@ namespace testdecoup
             textBox2.Text = param[0];
             
             // Afficher la valeur du premier mot dans une boîte de dialogue
-            MessageBox.Show("Le premier mot est : " + textBox2.Text);
+            //MessageBox.Show("Le premier mot est : " + textBox2.Text);
             
             // Fermer le fichier
             fichier.Close();
