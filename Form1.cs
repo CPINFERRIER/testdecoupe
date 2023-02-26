@@ -47,10 +47,8 @@ namespace testdecoup
                 {
                     closestFile = file;
                     closestNumber = difference;
-                }
-               
-                   
-                
+                }             
+                                   
                 try
                 {
                     // Ouvrir le fichier en lecture
