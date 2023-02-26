@@ -48,13 +48,14 @@ namespace testdecoup
                     closestFile = file;
                     closestNumber = difference;
                 }
-
-                // Ouvrir le fichier en lecture
-                string directdoss = closestFile;
-                StreamReader fichier = new StreamReader(directdoss);
+               
+                   
+                
                 try
                 {
-
+                    // Ouvrir le fichier en lecture
+                    string directdoss = closestFile;
+                    StreamReader fichier = new StreamReader(directdoss);
                     // Lire une ligne de texte depuis le fichier
                     string ligne = fichier.ReadLine();
 
@@ -74,11 +75,20 @@ namespace testdecoup
                     string fileName = namech + ".txt";
                     File.WriteAllText(textBox1.Text + "ShootOK/" + fileName, namech);
 
+                    // Fermer le fichier
+                    fichier.Close();
+
+                    // Supprimer le fichier
+                    if (File.Exists(directdoss))
+                    {
+                        File.Delete(directdoss);
+                    }
+                    break;
                 }
                 finally                 
                 {
-                    // Fermer le fichier
-                    fichier.Close();
+                    
+                    
                 }
                 
                
